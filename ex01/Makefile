@@ -18,7 +18,9 @@ CYAN = \033[0;36m
 NC = \033[0m
 
 BASE =  phone_book.class \
+phone_book.utils \
 contact.class \
+contact.utils \
 utils \
 main \
 

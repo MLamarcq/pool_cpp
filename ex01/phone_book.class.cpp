@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 13:32:58 by mael              #+#    #+#             */
-/*   Updated: 2023/09/07 15:31:28 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/07 16:17:26 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int	PhoneBook::start_phone_book(Contact Contact, PhoneBook PhoneBook)
 				}
 				while (std::atoi(input.c_str()) == 0 || std::atoi(input.c_str()) == 9)
 				{
+					std::cout << "Wrong input. ";
 					std::cout << "Please enter a number between 1 and 8 : ";
 					if (!(std::getline(std::cin, input)))
 						return (0);
@@ -94,56 +95,4 @@ int	PhoneBook::start_phone_book(Contact Contact, PhoneBook PhoneBook)
 			std::cout << "Wrong input, please try again" << std::endl;
 	}
 	return (1);
-}
-
-int	PhoneBook::add_contact(Contact Contact)
-{
-	if (_index + 1 > 8)
-		_index = 0;
-	if (Contact.fill_contact(&_contact[_index]) == 0)
-		return (0);
-	_index++;
-	if (_nbr_contact < 8)
-		_nbr_contact++;
-	return (1);
-}
-
-// void	PhoneBook::essai(Contact Contact)
-// {
-// 	if (_index == 3)
-// 	{
-// 		int i= 0;
-// 		while (i < _index)
-// 		{
-// 			Contact.print_contact(&_contact[i]);
-// 			i++;
-// 		}
-// 	}
-//}
-
-int	PhoneBook::nb_contact() const
-{
-	return (_nbr_contact);
-}
-
-void	PhoneBook::display_all(Contact Contact) const
-{
-	int i;
-	
-	i = 0;
-	std::cout << std::internal << std::setw(11) << "Index |" ;
-	std::cout << std::internal << std::setw(11) << "FirstName |" ;
-	std::cout << std::internal << std::setw(11) << "LastName |" ;
-	std::cout << std::internal << std::setw(11) << "NickName |" << std::endl;
-	while (i < _index)
-	{
-		_contact[i].print_inside_contact(i);
-		std::cout << "\n";
-		i++;
-	}
-	(void)Contact;
-}
-void	PhoneBook::display_contact(int index) const
-{
-	_contact[index - 1].print_contact();
 }

@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 09:57:21 by mael              #+#    #+#             */
-/*   Updated: 2023/09/07 15:18:22 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/07 16:09:48 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class Contact
 	
 		Contact(void);
 		~Contact(void);
-		// int	change_contact(void);
-		// int	print_contact(void);
 		int		fill_contact(Contact *Contact);
 		void	print_contact(void) const;
 		void	print_inside_contact(int i) const ;
+		int		fill_names(Contact *Contact, std::string str, int i);
+		int		fill_phone_number(Contact *Contact, std::string str, int i);
 
 
 	private :
