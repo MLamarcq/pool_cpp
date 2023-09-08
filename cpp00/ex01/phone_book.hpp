@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:29:55 by mael              #+#    #+#             */
-/*   Updated: 2023/09/07 15:02:13 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/08 12:03:39 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <iomanip>
 #include <cstdlib>
 #include <string>
+#include <stdlib.h>
+
 
 //utils.cpp
 int	is_digit(std::string str);

@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:33:07 by mael              #+#    #+#             */
-/*   Updated: 2023/09/07 15:27:11 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/08 10:28:03 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	is_digit(std::string str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= '0' && str[i] <= '9')
+		if ((str[i] >= '0' && str[i] <= '9') || str[i] == 32)
 			i++;
 		else
 			return (0);
@@ -34,7 +34,7 @@ int	is_letter(std::string str)
 	i = 0;
 	while (str[i])
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z') || str[i] == 32)
 			i++;
 		else
 			return (0);

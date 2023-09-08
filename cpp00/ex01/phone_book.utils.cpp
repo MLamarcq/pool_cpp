@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 16:13:06 by mael              #+#    #+#             */
-/*   Updated: 2023/09/07 16:13:46 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/08 11:58:30 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,20 @@
 
 int	PhoneBook::add_contact(Contact Contact)
 {
+	int temp;
+	
+	temp = 0;
 	if (_index + 1 > 8)
+	{
+		temp = _index;
 		_index = 0;
+	}
 	if (Contact.fill_contact(&_contact[_index]) == 0)
 		return (0);
-	_index++;
+	if (temp)
+		_index = temp;
+	else
+		_index++;
 	if (_nbr_contact < 8)
 		_nbr_contact++;
 	return (1);
@@ -49,5 +58,5 @@ void	PhoneBook::display_all(Contact Contact) const
 
 void	PhoneBook::display_contact(int index) const
 {
-	_contact[index - 1].print_contact();
+	_contact[index - 1].print_contact(index);
 }

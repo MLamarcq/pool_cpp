@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 13:32:58 by mael              #+#    #+#             */
-/*   Updated: 2023/09/07 16:17:26 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/08 12:10:12 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,44 @@ int	PhoneBook::start_phone_book(Contact Contact, PhoneBook PhoneBook)
 	{
 		input.erase();
 		std::cout << "\n";
-		std::cout << "Please, enter your action : ";
+		std::cout << "Please, enter your action (ADD, SEARCH, EXIT): ";
 		if (!(std::getline(std::cin, input)))
 			return (0);
 		if (ft_strncmp(input, "ADD", ft_strlen(input)) == 0)
 		{
-			if (PhoneBook.add_contact(Contact) == 0)
-				return (0);
+			std::cout << "\n";
+			if (PhoneBook.nb_contact() == 8)
+			{
+				std::cout << "You are trying to set a 9th contact. ";
+				std::cout << "In that case the oldest will be replace by the new one. The oldest will be lost.";
+				std::cout << "\nType 'Yes' to continue or 'Exit' to go back to the main menu : ";
+				if (!(std::getline(std::cin, input)))
+					return (0);
+				while (ft_strncmp(input, "Yes", ft_strlen(input)) != 0 && \
+					ft_strncmp(input, "Exit", ft_strlen(input))!= 0)
+				{
+					std::cout << "Wrong input. Please try again : ";
+					std::getline(std::cin, input);
+				}
+				if (ft_strncmp(input, "Exit", ft_strlen(input)) == 0)
+					std::cout << "\nNo changes. Back to the main menu." << std::endl;
+				else
+				{
+					if (PhoneBook.add_contact(Contact) == 0)
+						return (0);
+				}
+				//system("clear");
+			}
+			else
+			{
+				if (PhoneBook.add_contact(Contact) == 0)
+					return (0);
+				//system("clear");
+			}
 		}
 		else if (ft_strncmp(input, "SEARCH", ft_strlen(input)) == 0)
 		{
+			std::cout << "\n";
 			if (PhoneBook.nb_contact() == 0)
 			{
 				std::cout << "No contact set yet. Please type 'ADD' to start your phonebook" << std::endl;
@@ -78,7 +106,7 @@ int	PhoneBook::start_phone_book(Contact Contact, PhoneBook PhoneBook)
 					if (!(std::getline(std::cin, input)))
 						return (0);
 				}
-				while (std::atoi(input.c_str()) == 0 || std::atoi(input.c_str()) == 9)
+				while (std::atoi(input.c_str()) < 1 || std::atoi(input.c_str()) > 8)
 				{
 					std::cout << "Wrong input. ";
 					std::cout << "Please enter a number between 1 and 8 : ";

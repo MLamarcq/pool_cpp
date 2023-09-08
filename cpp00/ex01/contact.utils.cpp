@@ -6,19 +6,21 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 16:10:39 by mael              #+#    #+#             */
-/*   Updated: 2023/09/07 16:11:09 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/08 11:58:44 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phone_book.hpp"
 
-void	Contact::print_contact(void) const
+void	Contact::print_contact(int i) const
 {
-	std::cout << "First_name = " << _FirstName << std::endl;
-	std::cout << "Last_name = " << _LastName << std::endl; 
-	std::cout << "Nick_name = " << _NickName << std::endl; 
-	std::cout << "PhoneNumber = " << _PhoneNumber << std::endl; 
-	std::cout << "DarkestSecret = " << _DarkestSecret << std::endl; 
+	std::cout << "\n\tYou selected contact : " << i << std::endl;
+	std::cout << "\nFirst name : " << _FirstName << std::endl;
+	std::cout << "Last name : " << _LastName << std::endl; 
+	std::cout << "Nick name : " << _NickName << std::endl; 
+	std::cout << "Phone Number : " << _PhoneNumber << std::endl; 
+	std::cout << "Darkest Secret : " << _DarkestSecret << std::endl;
+	std::cout << "\n";
 }
 
 void	Contact::print_inside_contact(int i) const
