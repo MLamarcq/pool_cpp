@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 13:32:58 by mael              #+#    #+#             */
-/*   Updated: 2023/09/08 12:10:12 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/08 17:15:45 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,13 @@ int	PhoneBook::start_phone_book(Contact Contact, PhoneBook PhoneBook)
 				{
 					std::cout << "Wrong input. ";
 					std::cout << "Please enter a number between 1 and 8 : ";
+					if (!(std::getline(std::cin, input)))
+						return (0);
+				}
+				while (std::atoi(input.c_str()) > PhoneBook.nb_contact())
+				{
+					std::cout << "This contact does not exit. ";
+					std::cout << "Please try one who's already set : ";
 					if (!(std::getline(std::cin, input)))
 						return (0);
 				}
