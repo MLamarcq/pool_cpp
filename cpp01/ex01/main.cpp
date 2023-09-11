@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 20:52:07 by mael              #+#    #+#             */
-/*   Updated: 2023/09/10 20:54:30 by mael             ###   ########.fr       */
+/*   Created: 2023/09/11 02:03:38 by mael              #+#    #+#             */
+/*   Updated: 2023/09/11 10:04:24 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 int main()
 {
-	Zombie *zombie1;
+	Zombie	*zombie;
 
-	zombie1 = newZombie("Randy");
-	zombie1->announce();
-
-	randomChump("Clara");
-	delete zombie1;
+	zombie = zombieHorde(10, "Leyens");
+	delete [] zombie;
+	std::cout << "The horde has been destructed" << std::endl;
 	return (0);
 }

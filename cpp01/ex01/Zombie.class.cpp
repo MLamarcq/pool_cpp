@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 20:52:07 by mael              #+#    #+#             */
-/*   Updated: 2023/09/10 20:54:30 by mael             ###   ########.fr       */
+/*   Created: 2023/09/11 02:04:00 by mael              #+#    #+#             */
+/*   Updated: 2023/09/11 10:06:11 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.class.hpp"
 
-int main()
+Zombie::Zombie()
 {
-	Zombie *zombie1;
+	return;
+}
+Zombie::Zombie(std::string name) : _name(name)
+{
+	std::cout << "The horde is coming" << std::endl;
+	return ;
+}
+Zombie::~Zombie()
+{
+	return ;
+}
 
-	zombie1 = newZombie("Randy");
-	zombie1->announce();
+void	Zombie::setName(Zombie *zombie, int i, std::string name) const
+{
+	zombie[i]._name = name;
+}
 
-	randomChump("Clara");
-	delete zombie1;
-	return (0);
+void	Zombie::announce(int i) const
+{
+	std::cout << "The zombie " << i << " named " << this->_name << " said : More BraiiiiiiinnnzzzZ..." << std::endl;
 }
