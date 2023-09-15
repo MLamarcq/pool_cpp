@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:41:55 by mael              #+#    #+#             */
-/*   Updated: 2023/09/11 10:53:29 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/13 15:25:59 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,6 @@ int main()
 	std::cout << "La valeur de str est = " << str << std::endl;
 	std::cout << "La valeur pointee par stringPTR est = " << *stringPTR << std::endl;
 	std::cout << "La valeur de la reference stringREF est = " << stringREF << std::endl;
-
-	// std::cout << "\n";
-	// *stringPTR = "J'aime la vie";
-	// std::cout << "La valeur de str est = " << str << std::endl;
-	// std::cout << "La valeur de la reference stringREF est = " << stringREF << std::endl;
-	
-	// std::cout << "\n";
-	// stringREF = "J'aime la vie";
-	// std::cout << "La valeur de str est = " << str << std::endl;
-	// std::cout << "La valeur du pointeur stringPTR est = " << *stringPTR << std::endl;
 
 	return (0);
 }
