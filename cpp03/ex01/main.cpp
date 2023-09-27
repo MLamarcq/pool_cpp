@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:29:12 by mael              #+#    #+#             */
-/*   Updated: 2023/09/27 15:06:26 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/27 15:12:02 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int main()
 	}
 	std::cout << "\nOh no, he is dead ! Let's repair him !" << std::endl;
 	robot3.beRepaired(60);
-	std::cout << robot3.getName() << " feels better !" << std::endl;
+	std::cout << robot3.getName() << " feels better !\n" << std::endl;
 	
 	return (0);
 }

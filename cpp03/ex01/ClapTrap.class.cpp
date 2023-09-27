@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:14:46 by mael              #+#    #+#             */
-/*   Updated: 2023/09/27 14:37:54 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/27 15:11:48 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ ClapTrap & ClapTrap::operator=(ClapTrap const &rhs)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "ClapTrap destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called\n" << std::endl;
 	return ;
 }
 
@@ -125,7 +125,7 @@ void	ClapTrap::beRepaired(unsigned int amout)
 	}
 	if (this->_HitPoints == 0)
 	{
-		std::cout << this->_name << " is dead. Let's him come back !\n" << std::endl;
+		std::cout << this->_name << " is dead. Let's him come back !" << std::endl;
 		this->_HitPoints = this->_HitPoints + amout;
 		std::cout << this->_name << " is getting repair with an amout of " << amout << " hit points" << std::endl;
 		std::cout << this->_name << " has now " << this->_HitPoints << " hit points\n" << std::endl;
@@ -163,7 +163,7 @@ void	ClapTrap::takeDamage(unsigned int amout)
 	}
 	else
 		this->_HitPoints = this->_HitPoints - amout;
-	std::cout << this->_name << " takes damages, an amout of " << amout << " damages points\n" << std::endl;
+	std::cout << this->_name << " takes damages, an amout of " << amout << " damages points" << std::endl;
 	std::cout << this->_HitPoints << " hit points still remain for " << this->_name << "\n" << std::endl;
 	return ;
 }

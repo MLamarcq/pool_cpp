@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:21:54 by mael              #+#    #+#             */
-/*   Updated: 2023/09/27 15:06:43 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/27 15:09:22 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const &rhs)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "ScavTrap destructor called\n" << std::endl;
+	std::cout << "ScavTrap destructor called" << std::endl;
 	return ;
 }
 
