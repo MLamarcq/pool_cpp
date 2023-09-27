@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:14:46 by mael              #+#    #+#             */
-/*   Updated: 2023/09/26 14:46:39 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/27 14:38:08 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ void	ClapTrap::attack(std::string const &target)
 		std::cout << "Please set a target, it can't be" << std::cout;
 		return ;
 	}
-	if (is_letter(target) == 0)
+	if (is_correct(target) == 0)
 	{
-		std::cout << "A name is composed with letters only" << std::endl;
+		std::cout << "Wrong name\n" << std::endl;
 		return ;
 	}
 	if (this->_EnergyPoints == 0)
