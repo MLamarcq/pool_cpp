@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:14:46 by mael              #+#    #+#             */
-/*   Updated: 2023/10/03 13:02:28 by mael             ###   ########.fr       */
+/*   Updated: 2023/09/28 11:22:09 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,6 @@ void	ClapTrap::beRepaired(unsigned int amout)
 		std::cout << this->_name << " is getting repair with an amout of " << amout << " hit points" << std::endl;
 		std::cout << this->_name << " has now " << this->_HitPoints << " hit points\n" << std::endl;
 		this->_EnergyPoints--;
-		this->_isDead = false;
 		return ;
 	}
 	this->_HitPoints = this->_HitPoints + amout;

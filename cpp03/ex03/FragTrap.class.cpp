@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 10:45:35 by mael              #+#    #+#             */
-/*   Updated: 2023/10/03 13:01:03 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/03 14:44:11 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,7 @@
 
 FragTrap::FragTrap(void) : ClapTrap()
 {
-	std::string name;
-	bool		toggle;
-	
-	toggle = false;
-	std::cout << "A new FragTrap is now created !" << std::endl;
-	std::cout << "Let's give him a name !\n Enter your name :";
-	
-	while (toggle == false)
-	{
-		if (!(std::getline(std::cin, name)))
-		{
-			std::cout << "Getline problem" << std::endl;
-			return ;
-		}
-		if (is_correct(name) == 0)
-			std::cout << "Your name is not correct. Try another :";
-		else
-			toggle = true;
-	}
-	this->_name = name;
+	std::cout << "Default FragTrap constructor called" << std::endl;
 	this->_HitPoints = 100;
 	this->_EnergyPoints = 10;
 	this->_AttackDamage = 30;
@@ -192,7 +173,6 @@ void	FragTrap::higtFiveGuys(ClapTrap const &other)
 				}
 			 	new_hitpoint = std::atoi(input.c_str());
 				this->_HitPoints = this->_HitPoints + new_hitpoint;
-				this->_isDead = false;
 				std::cout << "\n" << this->_name << " is now repaired ! He has now " << this->_HitPoints << " hit points ! Thanks for him" << std::endl;
 				this->_EnergyPoints--;
 				toggle = true;

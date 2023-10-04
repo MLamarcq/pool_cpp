@@ -17,16 +17,14 @@ MAGENTA = \033[0;35m
 CYAN = \033[0;36m
 NC = \033[0m
 
-BASE =  ClapTrap.class \
+BASE =  animal.class \
 main \
-ScavTrap.class \
-utils \
-FragTrap.class \
-
+dog.class \
+cat.class \
 
 SRCS = $(BASE:%=%.cpp)
 
-SOFT_NAME := FragTrap
+SOFT_NAME := Animal
 OBJS = $(SRCS:%.cpp=%.o)
 OBJ = $(addprefix $(OBJ_DIR),$(OBJS))
 DEP = $(OBJ:%.o=%.d)

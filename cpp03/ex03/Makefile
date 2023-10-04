@@ -22,11 +22,12 @@ main \
 ScavTrap.class \
 utils \
 FragTrap.class \
+DiamondTrap.class \
 
 
 SRCS = $(BASE:%=%.cpp)
 
-SOFT_NAME := FragTrap
+SOFT_NAME := DiamondTrap
 OBJS = $(SRCS:%.cpp=%.o)
 OBJ = $(addprefix $(OBJ_DIR),$(OBJS))
 DEP = $(OBJ:%.o=%.d)
