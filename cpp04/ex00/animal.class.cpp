@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:24:53 by mael              #+#    #+#             */
-/*   Updated: 2023/10/04 15:33:06 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/05 10:16:09 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Animal::Animal(void)
 {
 	std::cout << "Animal default constructor called" << std::endl;
+	this->_type = "No type";
 	return ;
 }
 Animal::Animal(std::string type)

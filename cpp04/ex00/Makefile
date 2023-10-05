@@ -20,6 +20,8 @@ NC = \033[0m
 BASE =  animal.class \
 main \
 dog.class \
+WrongAnimal.class \
+WrongCat.class \
 cat.class \
 
 SRCS = $(BASE:%=%.cpp)
