@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:01:45 by mael              #+#    #+#             */
-/*   Updated: 2023/09/07 16:11:04 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/08 15:26:12 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Contact::~Contact(void)
 
 int Contact::fill_names(Contact *Contact, std::string str, int i)
 {
-	while(ft_strlen(str) < 1)
+	while(str.size() < 1)
 	{
 		if (!(std::getline(std::cin, str)))
 		{

@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 13:32:58 by mael              #+#    #+#             */
-/*   Updated: 2023/09/08 17:15:45 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/08 15:33:31 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	PhoneBook::start_phone_book(Contact Contact, PhoneBook PhoneBook)
 				//system("clear");
 			}
 		}
-		else if (ft_strncmp(input, "SEARCH", ft_strlen(input)) == 0)
+		else if (input.compare("SEARCH") == 0)
 		{
 			std::cout << "\n";
 			if (PhoneBook.nb_contact() == 0)
