@@ -6,7 +6,7 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:32:12 by mael              #+#    #+#             */
-/*   Updated: 2023/10/13 11:55:03 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/14 12:17:22 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 
 int main()
 {
-	// Animal* a =  new Animal();
-	// Animal* b = new Dog();
-	// Animal* c = new Dog("Bernard");
-	// Animal *d = new Cat("Manfred");
-	// WrongAnimal *e = new WrongAnimal();
-	// WrongAnimal *f = new WrongCat();
+	// Aanimal* a =  new Aanimal();
+	// Aanimal* b = new Dog();
+	// Aanimal* c = new Dog("Bernard");
+	// Aanimal *d = new Cat("Manfred");
+	// WrongAanimal *e = new WrongAanimal();
+	// WrongAanimal *f = new WrongCat();
 
 	// a->makeSound();
 	// b->makeSound();
@@ -40,9 +40,9 @@ int main()
 	// delete e;
 	// delete f;
 
-	// const Animal* meta = new Animal();
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
+	// const Aanimal* meta = new Aanimal();
+	// const Aanimal* j = new Dog();
+	// const Aanimal* i = new Cat();
 	
 	// std::cout << j->getType() << " " << std::endl;
 	// std::cout << i->getType() << " " << std::endl;
@@ -70,8 +70,9 @@ int main()
 	// brain.printIdea(true, 33);
 	//Brain brain2(brain);
 	
-	//Animal *a = new Cat;
-	// Animal *b = new Cat;
+	//Aanimal *a = new Cat;
+	// Aanimal *b = new Cat;
+	Aanimal *Sylvain = new Cat("Gerard");
 	Cat Tom("Fichtre");
 	Dog Medor;
 	
@@ -81,12 +82,14 @@ int main()
 	Tom.ChooseIdea("MORE MOUSE", 98, 30, 50);
 	Tom.ChooseSpecificIdea();
 	Tom.PrintIdea(true, 0);
+	Sylvain->makeSound();
 	
 	// Medor.PrintIdea(true, 0);
 	// Medor = a;
 	
 	//delete a;
 	// delete Medor;
+	delete Sylvain;
 	
 	return (0);
 }

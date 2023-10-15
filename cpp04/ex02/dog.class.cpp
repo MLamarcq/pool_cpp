@@ -6,13 +6,13 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 15:01:43 by mael              #+#    #+#             */
-/*   Updated: 2023/10/13 23:01:23 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/14 12:14:46 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "dog.class.hpp"
 
-Dog::Dog(void) : Animal()
+Dog::Dog(void) : Aanimal()
 {
 	std::cout << "Dog default constructor called\n" << std::endl;
 	this->_type = "Dog";
@@ -21,7 +21,7 @@ Dog::Dog(void) : Animal()
 	return ;
 }
 
-Dog::Dog(std::string type) : Animal(type)
+Dog::Dog(std::string type) : Aanimal(type)
 {
 	std::cout << "Type assignement dog constructor called\n" << std::endl;
 	if (type.compare("Dog") != 0)
@@ -37,7 +37,7 @@ Dog::Dog(std::string type) : Animal(type)
 	return ;
 }
 
-Dog::Dog(Dog const &src) : Animal(src)
+Dog::Dog(Dog const &src) : Aanimal(src)
 {
 	std::cout << "Copy dog constructor called\n" << std::endl;
 	*this = src;

@@ -6,20 +6,20 @@
 /*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 15:50:21 by mael              #+#    #+#             */
-/*   Updated: 2023/10/13 11:46:34 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/14 12:14:24 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cat.class.hpp"
 
-Cat::Cat(void) : Animal()
+Cat::Cat(void) : Aanimal()
 {
 	std::cout << "Cat default constructor called\n" << std::endl;
 	this->_type = "Cat";
 	this->_brain = new Brain("Mouse, Mouse, Mouse, Mouse ...");
 	return ;
 }
-Cat::Cat(std::string type) : Animal(type)
+Cat::Cat(std::string type) : Aanimal(type)
 {
 	std::cout << "Cat name assignement constructor called\n" << std::endl;
 	if (type.compare("Cat") != 0)
@@ -34,7 +34,7 @@ Cat::Cat(std::string type) : Animal(type)
 	std::cout << std::endl;
 	return ;
 }
-Cat::Cat(Cat const &src) : Animal(src)
+Cat::Cat(Cat const &src) : Aanimal(src)
 {
 	std::cout << "Cat copy constructor called\n" << std::endl;
 	*this = src;
