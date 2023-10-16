@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:06:45 by mael              #+#    #+#             */
-/*   Updated: 2023/09/25 16:57:38 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/16 09:58:54 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <string>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+
 
 class ClapTrap
 {
@@ -31,9 +34,13 @@ class ClapTrap
 
 
 			//Function member
-			void	attack(std::string const &target);
-			void	takeDamage(unsigned int amount);
-			void	beRepaired(unsigned int amout);
+			void			attack(std::string const &target);
+			void			takeDamage(unsigned int amount);
+			void			beRepaired(unsigned int amout);
+			
+			unsigned int	getAttackDamage(void) const;
+			unsigned int	getHitPoints (void) const;
+			std::string		getName (void) const;
 
 
 	private :
@@ -46,7 +53,7 @@ class ClapTrap
 };
 
 int	is_letter(std::string const	&str);
-
+std::string	intTostring(int number);
 
 
 

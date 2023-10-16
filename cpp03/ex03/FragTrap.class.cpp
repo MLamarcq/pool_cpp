@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 10:45:35 by mael              #+#    #+#             */
-/*   Updated: 2023/10/03 14:44:11 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/16 11:06:51 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,22 +73,17 @@ FragTrap::~FragTrap(void)
 
 void	FragTrap::attack(ClapTrap const &target)
 {
+	if (this->_isDead == true)
+	{
+		std::cout << "Your FragTrap " << this->_name << " is dead ! How could he attack ?" << std::endl;
+		std::cout << "Let him rest in peace !" << std::endl;
+		return ;
+	}
 	if (target.getDeath() == true)
 	{
 		std::cout << this->_name << " is trying to attack " << target.getName() << std::endl;
 		std::cout << "But " << target.getName() << " is dead" << std::endl;
 		std::cout << "Will you hit a dead man ? Poor you...\n" << std::endl;
-		return ;
-	}
-	if (is_correct(target.getName()) == 0)
-	{
-		std::cout << "Please choose an appropriate target" << std::endl;
-		return ;
-	}
-	if (this->_isDead == true)
-	{
-		std::cout << "Your FragTrap " << this->_name << " is dead ! How could he attack ?" << std::endl;
-		std::cout << "Let him rest in peace !" << std::endl;
 		return ;
 	}
 	if (this->_EnergyPoints == 0)

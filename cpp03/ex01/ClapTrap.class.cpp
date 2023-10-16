@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:14:46 by mael              #+#    #+#             */
-/*   Updated: 2023/09/27 15:11:48 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/16 10:49:28 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 ClapTrap::ClapTrap(void) : _HitPoints(10), _EnergyPoints(2), _AttackDamage(0), _isDead(false)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
+	this->_name = "ClapTrap";
 	return;
 }
 ClapTrap::ClapTrap(std::string const name) : _name(name), _HitPoints(10), _EnergyPoints(2), _AttackDamage(0), _isDead(false)
@@ -62,6 +63,11 @@ ClapTrap::~ClapTrap(void)
 
 void	ClapTrap::attack(std::string const &target)
 {
+	if (this->_isDead == true)
+	{
+		std::cout << "ClapTrap "<< this->_name << " is dead. How can he attacks?\n" << std::endl;
+		return ;
+	}
 	if (this->_name.size() == 0)
 	{
 		std::string name;
@@ -79,11 +85,6 @@ void	ClapTrap::attack(std::string const &target)
 		std::cout << "Please set a target, it can't be nothing !\n" << std::cout;
 		return ;
 	}
-	if (is_correct(target) == 0)
-	{
-		std::cout << "Wrong name\n" << std::endl;
-		return ;
-	}
 	if (this->_AttackDamage <= 0)
 	{
 		std::cout << "With " << this->_AttackDamage << " attack point " <<  this->_name << " attacks is useless. Unlucky\n" << std::endl;
@@ -92,11 +93,6 @@ void	ClapTrap::attack(std::string const &target)
 	if (this->_EnergyPoints == 0)
 	{
 		std::cout << "No Energy point left. No action possbile\n" << std::endl;
-		return ;
-	}
-	if (this->_isDead == true)
-	{
-		std::cout << "ClapTrap "<< this->_name << " is dead. How can he attacks?\n" << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_AttackDamage << " points of damage\n" << std::endl;
@@ -155,9 +151,10 @@ void	ClapTrap::takeDamage(unsigned int amout)
 	}
 	if (amout > this->_HitPoints)
 	{
+		std::cout << this->_name << " takes damages, an amout of " << amout << " damages points" << std::endl;
 		this->_HitPoints = 0;
-		std::cout << this->_HitPoints << " hit points still remain for " << this->_name << "\n" << std::endl;
-		std::cout << this->_name << " died. RIP\n" << std::endl;
+		std::cout << this->_HitPoints << " hit points still remain for " << this->_name << std::endl;
+		std::cout << this->_name << " died. RIP" << std::endl << std::endl;
 		this->_isDead = true;
 		return ;
 	}
@@ -165,6 +162,11 @@ void	ClapTrap::takeDamage(unsigned int amout)
 		this->_HitPoints = this->_HitPoints - amout;
 	std::cout << this->_name << " takes damages, an amout of " << amout << " damages points" << std::endl;
 	std::cout << this->_HitPoints << " hit points still remain for " << this->_name << "\n" << std::endl;
+	if (this->_HitPoints <= 0)
+	{
+		this->_isDead = true;
+		std::cout << this->_name << " died." << std::endl << std::endl;
+	}
 	return ;
 }
 

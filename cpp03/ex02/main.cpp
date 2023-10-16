@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:29:12 by mael              #+#    #+#             */
-/*   Updated: 2023/10/01 12:45:45 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/16 10:58:55 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ int main()
 	robot1.attack(robot2);
 	robot2.higtFiveGuys(robot1);
 	
+	
+	
+
 	
 	return (0);
 }

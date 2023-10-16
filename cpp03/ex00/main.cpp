@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:29:12 by mael              #+#    #+#             */
-/*   Updated: 2023/09/26 14:44:53 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/16 09:57:25 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,41 @@
 
 int main()
 {
-	ClapTrap human1("Julien");
-	ClapTrap human2("Thierry");
-	ClapTrap human3("Bernard");
+	std::srand(std::time(0));
+	ClapTrap robot1("Julien");
+	ClapTrap robot2("Thierry");
+	ClapTrap robot3("Bernard");
 
-	std::cout << "\n";
-	human1.attack("Thierry");
-	std::cout << "\n";
-	human2.takeDamage(5);
-	std::cout << "\n";
-	human2.attack("Julien");
-	std::cout << "\n";
-	human1.takeDamage(5);
-	std::cout << "\n";
-	human3.attack("Julien");
-	//human3.attack("Thierry");
+	std::cout << std::endl;
 	
-	//human2.takeDamage(5);
-	human1.takeDamage(5);
-	std::cout << "\n";
-	human2.beRepaired(2);
-	std::cout << "\n";
-	human2.attack("Bernard");
-	std::cout << "\n";
-	human3.takeDamage(5);
+	robot1.attack(robot2.getName());
+	std::cout << std::endl;
+	
+	robot2.takeDamage(robot1.getAttackDamage());
+	std::cout << std::endl;
+	
+	robot2.attack(robot1.getName());
+	std::cout << std::endl;
+	
+	robot1.takeDamage(5);
+	std::cout << std::endl;
+	
+	robot3.attack(robot1.getName());
 
-	std::cout << "\n";
-	ClapTrap human4(human2);
-	std::cout << "\n";
-	human4.attack("Julien");
+	robot1.takeDamage(5);
+	std::cout << std::endl;
+	
+	robot2.beRepaired(2);
+	std::cout << std::endl;
+	
+	robot2.attack("Bernard");
+	std::cout << std::endl;
+	
+	ClapTrap human4(robot2);
+	std::cout << std::endl;
+	
+	human4.attack(robot1.getName());
+	std::cout << std::endl;
 	
 	return (0);
 }

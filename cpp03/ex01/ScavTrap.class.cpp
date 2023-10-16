@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:21:54 by mael              #+#    #+#             */
-/*   Updated: 2023/09/27 15:09:22 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/16 10:14:37 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,24 +69,19 @@ ScavTrap::~ScavTrap(void)
 
 void	ScavTrap::attack(std::string const &target)
 {
-	if (target.size() == 0)
-	{
-		std::cout << "ScavTrap needs a name to attack !" << std::endl;
-		return ;
-	}
 	if (this->_isDead == true)
 	{
 		std::cout << "ScavTrap " << this->_name << " is destructed. How can he attacks?\n" << std::endl;
 		return ;
 	}
+	if (target.size() == 0)
+	{
+		std::cout << "ScavTrap needs a name to attack !" << std::endl;
+		return ;
+	}
 	if (this->_AttackDamage <= 0)
 	{
 		std::cout << "With " << this->_AttackDamage << " your ScavTrap attack is useless. Unlucky\n" << std::endl;
-		return ;
-	}
-	if (is_correct(target) == 0)
-	{
-		std::cout << "Wrong name\n" << std::endl;
 		return ;
 	}
 	if (this->_EnergyPoints == 0)

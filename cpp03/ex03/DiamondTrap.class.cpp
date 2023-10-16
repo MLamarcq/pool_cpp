@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.class.cpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:20:14 by mael              #+#    #+#             */
-/*   Updated: 2023/10/03 14:45:19 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/16 11:16:29 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	DiamondTrap::whoAmI()
 		std::string input;
 		bool		toggle = false;
 		
-		std::cout << this->_name << "is dead ! (Oh no !)" << std::endl;
+		std::cout << this->_name << " is dead ! (Oh no !)" << std::endl;
 		std::cout << "But, there is a way. We may repair him !" << std::endl;
 		std::cout << "Type an action : 'Repair' or 'No repair' : ";
 		
@@ -95,7 +95,7 @@ void	DiamondTrap::whoAmI()
 		{
 			if (!(std::getline(std::cin, input)))
 			{
-				std::cout << "Getline problem" << std::endl;
+				std::cout << "EOF called" << std::endl;
 				return ;
 			}
 			if (input.compare("Repair") == 0)
@@ -119,9 +119,10 @@ void	DiamondTrap::whoAmI()
 					{
 						amout = amout + std::atoi(input2.c_str());
 						this->_HitPoints = this->_HitPoints + amout;
-						std::cout << this->_name << " reborns with an amout of " << this->_HitPoints << " hit points !";
+						std::cout << this->_name << " reborns with an amout of " << this->_HitPoints << " hit points !" << std::endl;
 						this->_isDead = false;
 						this->_EnergyPoints--;
+						check = true;
 						toggle = true;
 					}
 				}

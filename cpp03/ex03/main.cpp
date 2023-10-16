@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:29:12 by mael              #+#    #+#             */
-/*   Updated: 2023/10/03 15:04:28 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/16 11:11:02 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,20 @@ int main()
 	FragTrap	robot2("Julien");
 	
 	
+	// robot1.whoAmI();
+	// robot1.attack("Julien");
+	// robot2.takeDamage(robot1.getAttackDamage());
+	// robot1.higtFiveGuys(robot2);
+	
+
+/*************************************************************************/
+
+	while(robot1.getDeath() == false && robot2.getEnergyPoints() > 0)
+	{
+		robot2.attack(robot1.getName());
+		robot1.takeDamage(robot2.getAttackDamage());
+	}
 	robot1.whoAmI();
-	robot1.attack("Julien");
-	robot2.takeDamage(robot1.getAttackDamage());
-	robot1.higtFiveGuys(robot2);
 	
 	return (0);
 }
