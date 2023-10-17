@@ -1,4 +1,5 @@
 #include "Cure.class.hpp"
+#include "AMateria.class.hpp"
 
 Cure::Cure(void) : AMateria(void)
 {
@@ -35,7 +36,7 @@ Cure &Cure::operator=(Cure const &rhs)
 	return (*this);
 }
 
-void	Cure::use(ICharacter &target) const
+void	Cure::use(ICharacter &target)
 {
 	std::string temp = target.getName();
 	if (temp.size < 0)
@@ -54,8 +55,9 @@ void	Cure::use(ICharacter &target) const
 
 AMateria *Cure::clone(void) const
 {
-	AMateria *clone;
+	// AMateria *clone;
 
-	clone = *this;
-	return (clone);
+	// clone = *this;
+	// return (clone);
+	return (new Cure(*this));
 }

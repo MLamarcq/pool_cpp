@@ -20,6 +20,9 @@ NC = \033[0m
 BASE = AMateria.class \
 main \
 utils \
+Character.class \
+Ice.class \
+Cure.class \
 
 SRCS = $(BASE:%=%.cpp)
 

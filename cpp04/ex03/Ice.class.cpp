@@ -1,4 +1,5 @@
 #include "Ice.class.hpp"
+#include "AMateria.class.hpp"
 
 Ice::Ice(void) : AMateria(void)
 {
@@ -16,7 +17,7 @@ Ice::Ice(std::string const &type) : AMateria(type)
 Ice::Ice(Ice const &src) : AMateria(src)
 {
 	std::cout << "Ice copy constructor called" << std::endl;
-	*this= src;
+	*this = src;
 	return ;
 }
 
@@ -35,10 +36,10 @@ Ice &Ice::operator=(Ice const &rhs)
 	return (*this);
 }
 
-void	Ice::use(ICharacter &target) const
+void	Ice::use(ICharacter &target)
 {
 	std::string temp = target.getName();
-	if (temp.size < 0)
+	if (temp.empty() == 1)
 	{
 		std::cout << "Character has no name" << std::endl;
 		return ;
@@ -54,8 +55,9 @@ void	Ice::use(ICharacter &target) const
 
 AMateria *Ice::clone(void) const
 {
-	AMateria *clone;
+	// AMateria *clone;
 
-	clone = *this;
-	return (clone);
+	// clone = *this;
+	// return (clone);
+	return (new Ice(*this));
 }

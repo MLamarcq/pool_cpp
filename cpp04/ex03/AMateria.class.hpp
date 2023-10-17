@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include "ICharacter.class.hpp"
 
 class AMateria
 {
@@ -12,7 +13,7 @@ class AMateria
 			AMateria(void);
 			AMateria(std::string const & type);
 			AMateria(AMateria const &src);
-			~AMateria(void);
+			virtual ~AMateria(void);
 
 			AMateria &operator=(AMateria const &rhs);
 
