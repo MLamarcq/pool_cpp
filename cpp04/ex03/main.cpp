@@ -41,8 +41,8 @@ int main()
 		me->use(1, *bob);
 		me->use(2, *bob);
 		
-		me->unEquip(1);
-		me->unEquip(2);
+		// me->unEquip(1);
+		// me->unEquip(2);
 
 		//me->on_the_floor();
 

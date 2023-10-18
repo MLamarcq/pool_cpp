@@ -3,6 +3,8 @@
 
 #include "IMateriaSource.class.hpp"
 #include "AMateria.class.hpp"
+#include "Ice.class.hpp"
+#include "Cure.class.hpp"
 
 class MateriaSource : public IMateriaSource
 {
@@ -22,8 +24,9 @@ class MateriaSource : public IMateriaSource
 
 		private :
 
-				AMateria	**_learn;
-				AMateria	**_stock;
+				AMateria	*_learn[4];
+				//AMateria	**_stock;
+				AMateria	*_temp;
 				int			_learn_index;
 				int			_stock_idx;
 				int			_follow;
