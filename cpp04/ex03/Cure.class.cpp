@@ -1,7 +1,7 @@
 #include "Cure.class.hpp"
 #include "AMateria.class.hpp"
 
-Cure::Cure(void) : AMateria(void)
+Cure::Cure(void) : AMateria()
 {
 	std::cout << "Cure default constructor called" << std::endl;
 	this->_type = "cure";
@@ -23,7 +23,7 @@ Cure::Cure(Cure const &src) : AMateria(src)
 
 Cure::~Cure(void)
 {
-	std:cout << "Cure destructor called" << std::endl;
+	std::cout << "Cure destructor called" << std::endl;
 	return ;
 }
 Cure &Cure::operator=(Cure const &rhs)
@@ -39,7 +39,7 @@ Cure &Cure::operator=(Cure const &rhs)
 void	Cure::use(ICharacter &target)
 {
 	std::string temp = target.getName();
-	if (temp.size < 0)
+	if (temp.empty() == 1)
 	{
 		std::cout << "Character has no name" << std::endl;
 		return ;
@@ -55,9 +55,5 @@ void	Cure::use(ICharacter &target)
 
 AMateria *Cure::clone(void) const
 {
-	// AMateria *clone;
-
-	// clone = *this;
-	// return (clone);
 	return (new Cure(*this));
 }

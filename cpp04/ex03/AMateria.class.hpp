@@ -20,10 +20,11 @@ class AMateria
 			std::string const &getType(void) const;
 			virtual AMateria* clone() const = 0;
 			virtual void use(ICharacter& target) = 0;
+			virtual void	setType(std::string type);
 
 	protected :
 
-			std::string _type;
+			std::string  _type;
 };
 
 int	is_letter(std::string str);

@@ -1,7 +1,7 @@
 #include "Ice.class.hpp"
 #include "AMateria.class.hpp"
 
-Ice::Ice(void) : AMateria(void)
+Ice::Ice(void) : AMateria()
 {
 	std::cout << "Ice default constructor called" << std::endl;
 	this->_type = "ice";
@@ -23,7 +23,7 @@ Ice::Ice(Ice const &src) : AMateria(src)
 
 Ice::~Ice(void)
 {
-	std:cout << "Ice destructor called" << std::endl;
+	std::cout << "Ice destructor called" << std::endl;
 	return ;
 }
 Ice &Ice::operator=(Ice const &rhs)
@@ -55,9 +55,5 @@ void	Ice::use(ICharacter &target)
 
 AMateria *Ice::clone(void) const
 {
-	// AMateria *clone;
-
-	// clone = *this;
-	// return (clone);
 	return (new Ice(*this));
 }

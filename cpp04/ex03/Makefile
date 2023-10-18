@@ -23,6 +23,7 @@ utils \
 Character.class \
 Ice.class \
 Cure.class \
+MateriaSource.class \
 
 SRCS = $(BASE:%=%.cpp)
 

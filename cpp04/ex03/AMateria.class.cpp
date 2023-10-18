@@ -37,3 +37,9 @@ std::string const &AMateria::getType(void) const
 {
 	return (this->_type);
 }
+
+void AMateria::setType(std::string type)
+{
+	this->_type = type;
+	return ;
+}

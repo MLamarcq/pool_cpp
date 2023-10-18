@@ -2,11 +2,14 @@
 
 int is_letter(std::string str)
 {
-	for (int i = 0; str[i], i++)
+	int j = 0;
+	for (int i = 0; str[i]; i++)
 	{
 		if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z') \
 		 || (str[i] == 32))
-		 	i++;
+		{
+			j++;
+		}
 		else
 			return (0);
 	}
