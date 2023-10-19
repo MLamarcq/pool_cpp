@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   animal.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:55:14 by mael              #+#    #+#             */
-/*   Updated: 2023/10/07 12:29:13 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/19 13:51:13 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+#include "Brain.class.hpp"
 
 class Animal
 {
@@ -29,9 +30,9 @@ class Animal
 
 			virtual std::string	getType(void) const;
 			virtual void		makeSound(void) const;
-			// virtual std::string	GetIdeas(void) const;
-			// virtual void		FillBrain(std::string idea);
-			// virtual void		PrintIdea(bool choice, int idea) const;
+			virtual void		PrintIdea(bool choice, int idea) const;
+			virtual void		ChooseIdea(std::string idea, int target, int start, int end);
+			virtual void		ChooseSpecificIdea(void);
 
 
 	protected :

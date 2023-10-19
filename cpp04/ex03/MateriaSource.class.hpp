@@ -28,7 +28,7 @@ class MateriaSource : public IMateriaSource
 				//AMateria	**_stock;
 				AMateria	*_temp;
 				int			_learn_index;
-				int			_stock_idx;
+				//int			_stock_idx;
 				int			_follow;
 
 };

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   animal.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:55:14 by mael              #+#    #+#             */
-/*   Updated: 2023/10/14 12:13:24 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/19 13:51:06 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ class Aanimal
 
 			std::string	getType(void) const;
 			virtual void		makeSound(void) const = 0;
+			virtual void		PrintIdea(bool choice, int idea) const = 0;
+			virtual void		ChooseIdea(std::string idea, int target, int start, int end) = 0;
+			virtual void		ChooseSpecificIdea(void) = 0;
 
 	protected :
 

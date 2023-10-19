@@ -110,12 +110,28 @@ int	Character::getIndex(void) const
 
 void	Character::equip(AMateria *materia)
 {
+	int i = 0;
+
 	if (this->_index > 3)
 	{
 		std::cout << this->_name << "'s inventory is full. We can't add a new Materia" << std::endl;
 		return ;
 	}
-	this->_item[this->_index] = materia;
+	std::cout << "index = " << this->_index << std::endl;
+	if (this->_item[this->_index] == NULL)
+		this->_item[this->_index] = materia;
+	else
+	{
+		while (i < this->_index)
+		{
+			if (this->_item[i] == NULL)
+			{
+				this->_item[i] = materia;
+				break ;
+			}
+			i++;
+		}
+	}
 	this->_index++;
 	return ;
 }
@@ -129,54 +145,115 @@ void	Character::use(int indx, ICharacter &target)
 	return ;
 }
 
-void	Character::unEquip(int index)
-{
-	int idx = index - 1;
-	if (idx > 3)
-	{
-		std::cout << "You are trying to unequip an item that does not exist" << std::endl;
-		return ;
-	}
-	if (this->_stock_index > 3)
-	{
-		std::cout << "There is too much item on the floor" << std::endl;
-		return ;
-	}
-	this->_stock[_stock_index] = this->_item[idx];
-	if (idx == 0)
-	{
-		this->_item[idx] = this->_item[idx + 1];
-		this->_item[idx + 1] = this->_item[idx + 2];
-		this->_item[idx + 2] = this->_item[idx + 3];
-		this->_item[idx + 3] = NULL;
-	}
-	else if (idx == 1)
-	{
-		this->_item[idx] = this->_item[idx + 1];
-		this->_item[idx + 1] = this->_item[idx + 2];
-		this->_item[idx + 2] = NULL;
-	}
-	else if (idx == 2)
-	{
-		this->_item[idx] = this->_item[idx + 1];
-		this->_item[idx + 1] = NULL;
-	}
-	else
-		this->_item[idx] = NULL;
-	this->_stock_index++;
-	return ;
-}
-
-// void	Character::on_the_floor(void) const
+// void	Character::unEquip(int index)
 // {
-// 	if (this->_stock)
+// 	int idx = index - 1;
+// 	if (idx > 4)
 // 	{
-// 		for (int i = 0; this->_stock[i]; i++)
-// 			std::cout << this->_stock[i]->getType() << "is on the floor" << std::endl;
+// 		std::cout << "You are trying to unequip an item that does not exist" << std::endl;
+// 		return ;
+// 	}
+// 	if (this->_stock_index > 4)
+// 	{
+// 		std::cout << "There is too much item on the floor" << std::endl;
+// 		return ;
+// 	}
+// 	this->_stock[_stock_index] = this->_item[idx];
+// 	std::cout << "type stock = " << this->_stock[_stock_index]->getType() << std::endl;
+// 	// if (idx == 0)
+// 	// {
+// 	// 	if (this->_item[idx + 1])
+// 	// 		this->_item[idx] = this->_item[idx + 1];
+// 	// 	else
+// 	// 		this->_item[idx] = NULL;
+// 	// 	if (this->_item[idx + 2])
+// 	// 		this->_item[idx + 1] = this->_item[idx + 2];
+// 	// 	else
+// 	// 		this->_item[idx + 1] = NULL;
+// 	// 	if (this->_item[idx + 2])
+// 	// 		this->_item[idx + 2] = this->_item[idx + 4];
+// 	// 	else
+// 	// 		this->_item[idx + 2] = NULL;
+// 	// 	if (this->_item[idx + 4])
+// 	// 		this->_item[idx + 4] = NULL;
+// 	// }	if (this->_learn_index > 0 && this->_follow > 0 && this->_learn_index == this->_follow)
+// 	{
+// 		return NULL;
+// 	}
+
+// // 	// 	if (this->_item[idx + 1])
+// // 	// 		this->_item[idx] = this->_item[idx + 1];
+// // 	// 	else
+// // 	// 		this->_item[idx] = NULL;
+// // 	// 	if (this->_item[idx + 2])	if (this->_learn_index > 0 && this->_follow > 0 && this->_learn_index == this->_follow)
+// 	{
+// 		return NULL;
+// 	}
+// 	// 	if (this->_item[idx + 1])
+// 	// 		this->_item[idx] = this->_item[idx + 1];
+// 	// 	else
+// 	// 		this->_item[idx] = NULL;
+// 	// 	if (this->_item[idx + 1])
+// 	// 		this->_item[idx + 1] = NULL;
+// 	// }
+// 	// else
+// 	// 	this->_item[idx] = NULL;
+// 	if (idx == 0)
+// 	{
+// 		this->_item[idx] = this->_item[idx + 1];
+// 		this->_item[idx + 1] = this->_item[idx + 2];
+// 		this->_item[idx + 2] = this->_item[idx + 4];
+// 		this->_item[idx + 4] = NULL;
+// 	}
+// 	else if (idx == 1)
+// 	{
+// 		this->_item[idx] = this->_item[idx + 1];
+// 		this->_item[idx + 1] = this->_item[idx + 2];
+// 		this->_item[idx + 2] = NULL;
+// 	}
+// 	else if (idx == 2)
+// 	{
+// 		this->_item[idx] = this->_item[idx + 1];
+// 		this->_item[idx + 1] = NULL;
 // 	}
 // 	else
-// 	{
-// 		std::cout << "You have to unEquip item from the character to check the floor" << std::endl;
-// 	}
+// 		this->_item[idx] = NULL;
+// 	this->_stock_index++;
 // 	return ;
-// }
+//}
+
+void Character::unEquip(int index)
+{
+	int idx = index - 1;
+	if (idx > 4)
+	{
+		std::cout << "You are trying to unequip an item that does not exist" << std::endl;
+		return;
+	}
+	if (this->_stock_index > 4)
+	{
+		std::cout << "There is too much item on the floor" << std::endl;
+		return;
+	}
+	this->_stock[this->_stock_index] = this->_item[idx];
+	this->_item[idx] = NULL;
+	this->_stock_index++;
+	this->_index--;
+	return;
+}
+
+
+void	Character::on_the_floor(void) const
+{
+	std::cout << "stock index = " << this->_stock_index << std::endl;
+	if (this->_stock)
+	{
+		for (int i = 0; this->_stock[i]; i++)
+			std::cout << this->_stock[i]->getType() << " is on the floor" << std::endl;
+	}
+	else
+	{
+		std::cout << "You have to unEquip item from the character to check the floor" << std::endl;
+	}
+	return ;
+}

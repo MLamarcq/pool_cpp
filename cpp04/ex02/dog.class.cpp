@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dog.class.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 15:01:43 by mael              #+#    #+#             */
-/*   Updated: 2023/10/14 12:14:46 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/19 14:01:31 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ Dog::Dog(std::string type) : Aanimal(type)
 Dog::Dog(Dog const &src) : Aanimal(src)
 {
 	std::cout << "Copy dog constructor called\n" << std::endl;
+	this->_brain = NULL;
 	*this = src;
 	return ;
 }
@@ -49,8 +50,12 @@ Dog	&	Dog::operator=(Dog const &rhs)
 	std::cout << "Dog operator assignement called\n" << std::endl;
 	if (this != &rhs)
 	{
+		if (this->_brain)
+			delete this->_brain;
+		this->_brain = new Brain();
+		for (int i = 0; i < 100; i++)
+			this->_brain->fillIdea(i, rhs.GetIdeas(i));
 		this->_type = rhs.getType();
-		this->_brain = rhs.getBrain();
 	}
 	return (*this);
 }
@@ -68,6 +73,17 @@ void	Dog::makeSound(void) const
 	return ;
 }
 
+std::string	Dog::GetIdeas(int idea) const
+{
+	if (idea >= 0 && idea <= 99)
+		return (this->_brain->getIdeas(idea));
+	else
+	{
+		std::cout << "You are trying to reach an idea that does not exist ! " << std::endl;
+		std::cout << "Don't forget, there is 100 idea only !" << std::endl;
+	}
+	return ("yo");
+}
 
 Brain	*Dog::getBrain(void) const
 {

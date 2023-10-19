@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:32:12 by mael              #+#    #+#             */
-/*   Updated: 2023/10/13 11:42:21 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/19 12:03:23 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,41 +18,43 @@
 
 int main()
 {
-	// Animal* a =  new Animal();
-	// Animal* b = new Dog();
-	// Animal* c = new Dog("Bernard");
-	// Animal *d = new Cat("Manfred");
-	// WrongAnimal *e = new WrongAnimal();
-	// WrongAnimal *f = new WrongCat();
+	Animal* a =  new Animal();
+	Animal* b = new Dog();
+	Animal* c = new Dog("Bernard");
+	Animal *d = new Cat("Manfred");
+	WrongAnimal *e = new WrongAnimal();
+	WrongAnimal *f = new WrongCat();
 
-	// a->makeSound();
-	// b->makeSound();
-	// c->makeSound();
-	// d->makeSound();
-	// e->makeSound();
-	// f->makeSound();
-	
-	// delete a;
-	// delete b;
-	// delete c;
-	// delete d;
-	// delete e;
-	// delete f;
+	std::cout << std::endl;
 
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	a->makeSound();
+	b->makeSound();
+	c->makeSound();
+	d->makeSound();
+	e->makeSound();
+	f->makeSound();
 	
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl << std::endl;
-	
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	delete a;
+	delete b;
+	delete c;
+	delete d;
+	delete e;
+	delete f;
 
-	delete meta;
-	delete j;
-	delete i;
+	// const Animal* meta = new Animal();
+	// const Animal* j = new Dog();
+	// const Animal* i = new Cat();
+	
+	// std::cout << j->getType() << " " << std::endl;
+	// std::cout << i->getType() << " " << std::endl << std::endl;
+	
+	// i->makeSound(); //will output the cat sound!
+	// j->makeSound();
+	// meta->makeSound();
+
+	// delete meta;
+	// delete j;
+	// delete i;
 		
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.class.cpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:22:22 by mael              #+#    #+#             */
-/*   Updated: 2023/10/05 11:34:27 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/19 12:02:36 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 WrongAnimal::WrongAnimal(void)
 {
 	std::cout << "WrongAnimal default construtor called\n" << std::endl;
-	this->_type = "No type";
+	this->_type = "Wrong Animal";
 	return ;
 }
 
@@ -23,7 +23,7 @@ WrongAnimal::WrongAnimal(std::string type)
 {
 	std::cout << "WrongAnimal type assignement construtcor called" << std::endl;
 	if (type.size() < 1)
-		this->_type = "No type";
+		this->_type = "Wrong Animal";
 	else
 		this->_type = type;
 	return ;

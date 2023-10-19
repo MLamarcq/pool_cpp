@@ -20,7 +20,7 @@ class ICharacter
 			virtual void				use(int index, ICharacter &target) = 0;
 			virtual AMateria			*getItem(int index) const = 0;
 			virtual void				unEquip(int index) = 0;
-			//virtual	void				on_the_floor(void) const;
+			virtual	void				on_the_floor(void) const = 0;
 
 };
 

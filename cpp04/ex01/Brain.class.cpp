@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:48:02 by mael              #+#    #+#             */
-/*   Updated: 2023/10/13 12:00:09 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/19 13:38:36 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Brain::Brain(void)
 Brain::Brain(std::string name)
 {
 	std::cout << "Brain set idea constructor called" << std::endl;
-	std::cout << "Idea = " << name << std::endl;
 	this->fillBrain(name);
 	return ;
 }
@@ -60,6 +59,15 @@ Brain::~Brain(void)
 	return ;
 }
 
+void	Brain::fillIdea(int index, std::string idea)
+{
+	if (index >= 0 && index <= 99)
+		this->_ideas[index] = idea;
+	else
+		std::cout << "You are tried to reach an idea that is not in the brain !" << std::endl;
+	return ;
+}
+
 std::string Brain::getIdeas(int i) const
 {
 	if (i >= 0 && i <= 99)
@@ -92,11 +100,6 @@ void	Brain::chooseIdea(std::string idea, int target, int start, int end)
 		std::cout << "An idea is not the void ! Wait.. It's too philosophical for me" << std::endl;
 		return ;
 	}
-	// if (is_correct(idea) == 0)
-	// {
-	// 	std::cout << "An idea is only coposed with letters or numbers" << std::endl;
-	// 	return ;
-	// }
 	if (target < 0 || target > 100 || start < 0 || start > 100 || end > 100 || end < 0)
 	{
 		std::cout << "Your target, start and end can not be negative or bigger than 100. Impossible to choose idea" << std::endl;

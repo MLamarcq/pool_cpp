@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   animal.class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:24:53 by mael              #+#    #+#             */
-/*   Updated: 2023/10/05 10:16:09 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/19 13:22:59 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,25 @@ void	Animal::makeSound(void) const
 	std::cout << "This is animal sound. Nothing special\n" << std::endl;
 	return ;
 }
+
+void	Animal::ChooseIdea(std::string idea, int target, int start, int end)
+{
+	(void)idea;
+	(void)target;
+	(void)start;
+	(void)end;
+	return ;
+}
+
+void	Animal::PrintIdea(bool choice, int idea) const
+{
+	(void)choice;
+	(void)idea;
+	return ;
+}
+
+void	Animal::ChooseSpecificIdea(void)
+{
+	return ;
+}
+

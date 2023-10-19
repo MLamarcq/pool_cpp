@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   animal.class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:24:53 by mael              #+#    #+#             */
-/*   Updated: 2023/10/05 10:16:09 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/19 12:02:43 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 Animal::Animal(void)
 {
 	std::cout << "Animal default constructor called" << std::endl;
-	this->_type = "No type";
+	this->_type = "Animal";
 	return ;
 }
 Animal::Animal(std::string type)
 {
 	std::cout << "Type assignement animal constructor called" << std::endl;
 	if (type.size() < 1)
-		this->_type = "No type";
+		this->_type = "Animal";
 	else
 		this->_type = type;
 	return ;

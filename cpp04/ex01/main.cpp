@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:32:12 by mael              #+#    #+#             */
-/*   Updated: 2023/10/13 11:55:03 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/19 13:46:32 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,74 +19,70 @@
 
 int main()
 {
-	// Animal* a =  new Animal();
-	// Animal* b = new Dog();
-	// Animal* c = new Dog("Bernard");
-	// Animal *d = new Cat("Manfred");
-	// WrongAnimal *e = new WrongAnimal();
-	// WrongAnimal *f = new WrongCat();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	
+	j->makeSound();
+	i->makeSound();
+	
+	Animal *animalHorde[20];
 
-	// a->makeSound();
-	// b->makeSound();
-	// c->makeSound();
-	// d->makeSound();
-	// e->makeSound();
-	// f->makeSound();
-	
-	// delete a;
-	// delete b;
-	// delete c;
-	// delete d;
-	// delete e;
-	// delete f;
+	for (int i = 0; i < 10; i++)
+	{
+		animalHorde[i] = new Dog();
+	}
+	for (int i = 10; i < 20; i++)
+	{
+		animalHorde[i] = new Cat();
+	}
 
-	// const Animal* meta = new Animal();
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
-	
-	// std::cout << j->getType() << " " << std::endl;
-	// std::cout << i->getType() << " " << std::endl;
-	
-	// i->makeSound(); //will output the cat sound!
-	// j->makeSound();
-	// meta->makeSound();
 
-	// delete meta;
-	// delete j;
-	// delete i;
-	
-	// Brain brain;
+	for (int i = 0; i < 20; i++)
+		animalHorde[i]->makeSound();
 
-	// brain.fillBrain("Hello");
-	// //brain.getIdeas(20);
+	
+	animalHorde[0]->ChooseIdea("J'aime les os", 0, 10, 20);
+	animalHorde[1]->PrintIdea(true, 0);
+	std::cout << std::endl;
+	animalHorde[0]->PrintIdea(true, 0);
+	animalHorde[0]->ChooseSpecificIdea();
+	animalHorde[0]->PrintIdea(true, 0);
 
-	// // brain.chooseIdea("hehe", 40, 0, 10);
-	// // brain.chooseIdea("salut les amis !", 66, 0, 0);
-	// // brain.chooseIdea("Love you", 0, 20, 35);
-	// // brain.chooseIdea("Am i right ?", 44, 78, 95);
+
+	for (int i = 0; i < 10; i++)
+	{
+		delete animalHorde[i];
+	}
+	for (int i = 10; i < 20; i++)
+	{
+		delete animalHorde[i];
+	}
 	
-	// brain.chooseSpecificIdea();
+
 	
-	// brain.printIdea(true, 33);
-	//Brain brain2(brain);
+	delete j;//should not create a leak
+	delete i;
+
+	return 0;
+
+/*****************************************************************************/
+	// Cat Tom("Fichtre");
+	// Dog Medor;
 	
-	//Animal *a = new Cat;
-	// Animal *b = new Cat;
-	Cat Tom("Fichtre");
-	Dog Medor;
-	
-	//Tom.FillBrain("Hello");
-	//a.chooseIdea("Hello", 5, 0, 0);
-	std::cout << "Tom's type = " << Tom.getType()<< std::endl << std::endl;
-	Tom.ChooseIdea("MORE MOUSE", 98, 30, 50);
-	Tom.ChooseSpecificIdea();
-	Tom.PrintIdea(true, 0);
-	
+	// Tom.ChooseIdea("MORE MOUSE", 98, 30, 50);
+	// Tom.PrintIdea(true, 0);
+
 	// Medor.PrintIdea(true, 0);
-	// Medor = a;
+	// Medor.ChooseIdea("MORE BONES", 12, 88, 99);
+	// Medor.PrintIdea(true, 0);
 	
-	//delete a;
-	// delete Medor;
+	// Dog Milou(Medor);
+
+	// Medor.ChooseIdea("Hide Idea", 0, 50, 99);
 	
-	return (0);
+	// Milou.PrintIdea(true, 0);
+
+	// Milou = Medor;
+	// Milou.PrintIdea(true, 0);
+	// return (0);
 }

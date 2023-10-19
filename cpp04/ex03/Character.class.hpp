@@ -21,7 +21,7 @@ class Character : public ICharacter
 		AMateria			*getItem(int index) const;
 		void				unEquip(int index);
 		int					getIndex(void) const;
-		//void					on_the_floor(void) const;
+		void					on_the_floor(void) const;
 
 	private :
 		

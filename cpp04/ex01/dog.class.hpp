@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dog.class.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:52:14 by mael              #+#    #+#             */
-/*   Updated: 2023/10/08 12:02:15 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/19 12:28:04 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ class Dog : public Animal
 			void		makeSound(void) const;
 			Brain		*getBrain(void) const;
 			std::string	GetIdeas(int idea) const;
+			void		PrintIdea(bool choice,int idea) const;
 			void		ChooseIdea(std::string idea, int target, int start, int end);
 			void		ChooseSpecificIdea(void);
-			void		PrintIdea(bool choice,int idea) const;
 
 	private :
 	

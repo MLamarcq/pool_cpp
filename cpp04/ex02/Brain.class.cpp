@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:48:02 by mael              #+#    #+#             */
-/*   Updated: 2023/10/13 12:00:09 by mael             ###   ########.fr       */
+/*   Updated: 2023/10/19 13:50:21 by mlamarcq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,15 @@ Brain & Brain::operator=(Brain const &rhs)
 Brain::~Brain(void)
 {
 	std::cout << "Brain destructor called" << std::endl;
+	return ;
+}
+
+void	Brain::fillIdea(int index, std::string idea)
+{
+	if (index >= 0 && index <= 99)
+		this->_ideas[index] = idea;
+	else
+		std::cout << "You are tried to reach an idea that is not in the brain !" << std::endl;
 	return ;
 }
 
