@@ -17,13 +17,16 @@ MAGENTA = \033[0;35m
 CYAN = \033[0;36m
 NC = \033[0m
 
-BASE =  Bureaucrate.class \
-Form.class \
+BASE =  Bureaucrat.class \
+AForm.class \
+ShrubberyCreationForm.class \
+RobotomyRequestForm.class \
+PresidentialPardonForm.class \
 main \
 
 SRCS = $(BASE:%=%.cpp)
 
-SOFT_NAME := Bureaucrate
+SOFT_NAME := Bureaucrat
 OBJS = $(SRCS:%.cpp=%.o)
 OBJ = $(addprefix $(OBJ_DIR),$(OBJS))
 DEP = $(OBJ:%.o=%.d)

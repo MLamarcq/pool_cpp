@@ -1,24 +1,23 @@
-#ifndef BUREAUCRATE_CLASS_HPP
-#define BUREAUCRATE_CLASS_HPP
+#ifndef BUREAUCERAT_CLASS_HPP
+#define BUREAUCERAT_CLASS_HPP
 
-#include <iostream>
 #include <string>
-#include <cstdlib>
-#include "Form.class.hpp"
+#include <iostream>
+#include "AForm.class.hpp"
 
+class AForm ;
 
-class Form ;
-
-class Bureaucrate
+class Bureaucrat
 {
 
-		public : 
+		public :
 				
-				Bureaucrate(std::string name, int grade);
-				Bureaucrate(Bureaucrate const &src);
-				~Bureaucrate(void);
+				Bureaucrat(std::string const name, int grade);
+				Bureaucrat(Bureaucrat const &src);
+				~Bureaucrat(void);
 
-				Bureaucrate &operator=(Bureaucrate const &rhs);
+				Bureaucrat &operator=(Bureaucrat const &rhs);
+
 
 				std::string			getName(void) const;
 				int					getGrade(void) const;
@@ -29,17 +28,16 @@ class Bureaucrate
 				int					checkGrade(int grade) const;
 				std::string			intTostring(int number);
 
+				void				signForm(AForm const &Aform);
 
-				void				exec_form(Form const &form);
-				void				signForm(Form const &form);
+				void				checkForm(AForm const &form) const;
+				void				executeForm(AForm &form);
 
-
-				class GradeTooHighExecption : public std::exception
+				class GradeTooHighExecption: public std::exception
 				{
-						public :
-								const char *what() const throw();
+					public :
+							const char *what() const throw();
 				};
-
 
 				class GradeTooLowExecption : public std::exception
 				{
@@ -72,14 +70,16 @@ class Bureaucrate
 							const char *what() const throw();
 				};
 
-		private : 
-				
-				Bureaucrate(void);
-				std::string			_name;
-				int					_grade;
+
+		private :
+
+				Bureaucrat(void);
+				std::string	_name;
+				int			_grade;
+
 };
 
-std::ostream &operator<<(std::ostream &ost, Bureaucrate const &rhs);
+std::ostream &operator<<(std::ostream &ost, Bureaucrat const &rhs);
 
 
 #endif

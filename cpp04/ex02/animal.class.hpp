@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   animal.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlamarcq <mlamarcq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mael <mael@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:55:14 by mael              #+#    #+#             */
-/*   Updated: 2023/10/19 13:51:06 by mlamarcq         ###   ########.fr       */
+/*   Updated: 2023/10/27 13:56:20 by mael             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Aanimal
 
 			Aanimal &operator=(Aanimal const &rhs);
 
-			std::string	getType(void) const;
+			std::string			getType(void) const;
 			virtual void		makeSound(void) const = 0;
 			virtual void		PrintIdea(bool choice, int idea) const = 0;
 			virtual void		ChooseIdea(std::string idea, int target, int start, int end) = 0;

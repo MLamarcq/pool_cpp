@@ -1,30 +1,38 @@
 #include "Bureaucrate.class.hpp"
+#include "Form.class.hpp"
 
 int main()
 {
-	Bureaucrate Tom("Tom", 5);
-	Bureaucrate Brice("4565", 48);
-	Bureaucrate Sandrine(Brice);
-	Bureaucrate Salva ("Salva", 151);
-	Bureaucrate Didier ("Didier", 0);
+	Form form1("Worker's form", 55, 40);
+	Form form2("Boss's form", 1, 1);
+	Form form3("Manager's form", 25, 25);
+	Bureaucrate b1("Marcel", 154);
+	Bureaucrate b2("Franck", 48);
+	Bureaucrate b3("Emilien", 2);
+	std::cout << std::endl;
+	
+	std::cout << form1 << std::endl;
+	
+	form1.beSigned(b1);
+	
+	std::cout << form1 << std::endl;
+	
+	form1.beSigned(b2);
 
-	std::cout << Tom << std::endl;
-	std::cout << Brice << std::endl;
-	std::cout << Sandrine << std::endl;
-	std::cout << Salva << std::endl;
-	std::cout << Didier << std::endl;
+	std::cout << form1 << std::endl;
 
-	Salva.DecreaseGrade();
-	std::cout << Salva << std::endl;
+	form1.beSigned(b3);
 
-	Didier.IncreaseGrade();
-	std::cout << Didier << std::endl;
+	std::cout << form1 << std::endl;
 
-	Sandrine.DecreaseGrade();
-	std::cout << Sandrine << std::endl;
-
-	Tom.IncreaseGrade();
-	std::cout << Tom << std::endl;
-
+	form2.beSigned(b3);
+	std::cout << form1 << std::endl;
+	
+	
+	b3.exec_form(form1);
+	b1.exec_form(form1);
+	b3.signForm(form1);
+	b3.signForm(form2);
+	b3.signForm(form3);
 	return (0);
 }

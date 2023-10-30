@@ -4,12 +4,16 @@
 
 #include <string>
 #include <iostream>
+#include <cstdlib>
+#include "Bureaucrate.class.hpp"
+
+class Bureaucrate ;
 
 class Form
 {
 		public :
 
-				Form(std::string name, int grade, int sign_grade, int exec_grade);
+				Form(std::string name, int sign_grade, int exec_grade);
 				Form(Form const &src);
 				~Form(void);
 
@@ -20,13 +24,12 @@ class Form
 				int			getSignGrade(void) const;
 				int			getExecGrade(void) const;
 
-				bool		beSigned(Form const &rhs) const;
-				void		signForm(void) const;
+				void		beSigned(Bureaucrate &bureaucrate);
 
 				int			checkGrade(int grade) const;
 
-				int			is_letter(std::string str);
-				int			is_digit(int grade);
+				int			is_letter(std::string str) const;
+				int			is_digit(std::string str) const;
 
 				class GradeTooLowExecption : public std::exception
 				{
@@ -40,6 +43,24 @@ class Form
 							const char *what() const throw();
 				};
 
+				class SignedGradeBadException : public std::exception
+				{
+					public :
+							const char *what() const throw();
+				};
+
+				class ExecGradeBadException : public std::exception
+				{
+					public :
+							const char *what() const throw();
+				};
+
+				class SignedFormBadException : public std::exception
+				{
+					public :
+							const char *what() const throw();
+				};
+
 
 		private :
 
@@ -48,8 +69,6 @@ class Form
 				bool		_signed;
 				int			_sign_grade;
 				int			_exec_grade;
-
-
 
 };
 
