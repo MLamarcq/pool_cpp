@@ -1,2 +1,2 @@
-objects/main.o: main.cpp Bureaucrate.class.hpp
-Bureaucrate.class.hpp:
+objects/main.o: main.cpp Bureaucrat.class.hpp
+Bureaucrat.class.hpp:

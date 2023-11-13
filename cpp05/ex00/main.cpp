@@ -1,4 +1,4 @@
-#include "Bureaucrate.class.hpp"
+#include "Bureaucrat.class.hpp"
 
 int main()
 {

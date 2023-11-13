@@ -5,7 +5,7 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
-#include "Bureaucrate.class.hpp"
+#include "Bureaucrat.class.hpp"
 
 class Bureaucrate ;
 

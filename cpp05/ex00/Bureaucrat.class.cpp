@@ -1,4 +1,4 @@
-#include "Bureaucrate.class.hpp"
+#include "Bureaucrat.class.hpp"
 
 Bureaucrate::Bureaucrate(void)
 {
@@ -129,17 +129,30 @@ void		Bureaucrate::IncreaseGrade(void)
 {
 	int grade = this->_grade;
 	grade--;
-	std::cout << "Bureaucrate " << this->_name << " is getting a upper grade" << std::endl;
 	this->_grade = checkGrade(grade);
+	if (this->_grade == 1 || this->_grade == 150)
+		return ;
+	std::cout << "Bureaucrate " << this->_name << " is getting a upper grade" << std::endl;
 	return ;
 }
 void		Bureaucrate::DecreaseGrade(void)
 {
 	int grade = this->_grade;
 	grade++;
-	std::cout << "Bureaucrate " << this->_name << " is getting a lower grade" << std::endl;
 	this->_grade = checkGrade(grade);
+	if (this->_grade == 1 || this->_grade == 150)
+		return ;
+	std::cout << "Bureaucrate " << this->_name << " is getting a lower grade" << std::endl;
 	return ;
+}
+
+const char *Bureaucrate::GradeTooHighExecption::what() const throw()
+{
+	return ("Bureaucrate is already at the top of the company. How can he be higher ?\n");
+}
+const char *Bureaucrate::GradeTooLowExecption::what() const throw()
+{
+	return ("Bureaucrate is already at the bottom of the company. How can he be lower ?\n");
 }
 
 int			Bureaucrate::checkGrade(int grade) const
@@ -192,88 +205,6 @@ std::string Bureaucrate::intTostring(int number)
 }
 
 
-void	Bureaucrate::exec_form(Form const &form)
-{
-	try
-	{
-		if (form.getSigned() == false)
-		{
-			throw (NotSignedExecption());
-		}
-		if (this->_grade > form.getExecGrade())
-		{
-			throw (GradeLowExecExecption());
-		}
-	}
-	catch (NotSignedExecption &e)
-	{
-		std::cerr << e.what() << std::endl;
-		std::cerr << this->_name << " can't sign " << form.getName() << " because " << form.getName() << " is not sign." << std::endl;
-		return ;
-	}
-	catch (GradeLowExecExecption & e)
-	{
-		std::cerr << e.what() << std::endl;
-		return ;
-	}
-	std::cout << "Bureaucat " << this->_name << " is executing " << form.getName() << std::endl;
-	return ;
-}
-
-void	Bureaucrate::signForm(Form const &form)
-{
-	try
-	{
-		if (this->_grade > form.getSignGrade())
-		{
-			throw(SignedFormExecption());
-		}
-		if (form.getSigned() == false)
-		{
-			throw(NotSignedExecption());
-		}
-	}
-	catch (SignedFormExecption &e)
-	{
-		std::cerr << e.what() << std::endl;
-		std::cerr << this->_name << " couldn't sign " << form.getName() << " because " << this->_name << "'s grade is too low." << std::endl;
-		return ;
-	}
-	catch (NotSignedExecption &e)
-	{
-		std::cerr << e.what() << std::endl;
-		std::cerr << this->_name << " couldn't sign " << form.getName() << " because " << form.getName() << " is not signed." << std::endl;
-		return ;
-	}
-	std::cout << this->_name << " signed " << form.getName() << std::endl;
-	return ;
-}
-
-
-const char *Bureaucrate::GradeTooHighExecption::what() const throw()
-{
-	return ("Bureaucrate is already at the top of the company. How can he be higher ?\n");
-}
-
-const char *Bureaucrate::GradeTooLowExecption::what() const throw()
-{
-	return ("Bureaucrate is already at the bottom of the company. How can he be lower ?\n");
-}
-
-const char *Bureaucrate::GradeLowExecExecption::what() const throw()
-{
-	return ("Bureaucrat's grade too low to execute form\n");
-}
-
-const char* Bureaucrate::NotSignedExecption::what() const throw()
-{
-	return ("Form is not signed\n");
-}
-
-const char *Bureaucrate::SignedFormExecption::what() const throw()
-{
-	return ("Bureaucrat's grade is too low to sign form\n");
-}
 std::ostream &operator<<(std::ostream &ost, Bureaucrate const &rhs)
 {
 	ost << rhs.getName() << " bureaucrate grade " << rhs.getGrade() << std::endl;
