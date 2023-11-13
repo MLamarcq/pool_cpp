@@ -5,20 +5,12 @@ Base *generate(void)
 	Base *base = NULL;
 	int time = std::rand();
 	if (time % 2 == 0)
-	{
 		base = new A;
-		std::cout << "This is an A" << std::endl;
-	}
 	else if (time % 3 == 0)
-	{
 		base = new B;
-		std::cout << "This is a B" << std::endl;
-	}
 	else
-	{
 		base = new C;
-		std::cout << "This is a C" << std::endl;
-	}
+	
 	return (base);
 }
 
@@ -33,7 +25,7 @@ void	identify(Base *p)
 	if (child2 != NULL)
 		std::cout << "We have a B !" << std::endl;
 	if (child3 != NULL)
-		std::cout << "We have A C !" << std::endl;
+		std::cout << "We have a C !" << std::endl;
 	return ;
 }
 
@@ -79,6 +71,8 @@ int main()
 	Base *base = generate();
 
 	identify(base);
+
+	std::cout << std::endl;
 
 	identify(*base);
 	

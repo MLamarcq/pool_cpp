@@ -5,7 +5,12 @@ int main ()
 	int tab[] = {3, 4, 5, 6};
 	::Iter(tab, 4, ::print_tab<int>);
 	std::cout << std::endl;
+	
 	::Iter(tab, 4, ::increase<int>);
+	::Iter(tab, 4, ::print_tab<int>);
+	std::cout << std::endl;
+
+	::Iter(tab, 4, ::decrease<int>);
 	::Iter(tab, 4, ::print_tab<int>);
 	std::cout << std::endl;
 

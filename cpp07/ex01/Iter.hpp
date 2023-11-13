@@ -34,4 +34,12 @@ void	increase(T &find)
 	return ;
 }
 
+template <typename T>
+
+void	decrease(T &find)
+{
+	--find;
+	return ;
+}
+
 #endif
