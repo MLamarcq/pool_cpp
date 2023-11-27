@@ -9,9 +9,12 @@
 #include <algorithm>
 
 template<typename T>
-void	easyfind(T &type, int finder);
+void	found(T &type, int finder);
 template<typename T>
 void	fillContainer(T &type, int ref);
+template<typename T>
+void	easyfind(T &type, int finder);
+
 
 class NotFindException : public std::exception
 {

@@ -1,7 +1,7 @@
 #include "easyfind.class.hpp"
 
 template<typename T>
-void easyfind(T &type, int finder)
+void found(T &type, int finder)
 {
 	typename T::const_iterator i;
 
@@ -36,12 +36,26 @@ void	fillContainer(T &type, int ref)
 		for (int i = 0; i < ref + start_value; i++)
 		{
 			type.push_back(i);
-			std::cout << i << std::endl;
 		}
 		start_value = type.back() + 1;
 	}
 	return ;
 }
+template<typename T>
+void	easyfind(T &type, int finder)
+{
+	try
+	{
+		found(type, finder);
+	}
+	catch (NotFindException &e)
+	{
+		std::cout << e.what() << std::endl;
+		return ;
+	}
+	return ;
+}
+
 const char *NotFindException::what() const throw()
 {
 	return ("Occurence absente");
