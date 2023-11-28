@@ -38,15 +38,35 @@ Array<T>::Array(Array<T> const &src)
 	return ;
 }
 template <typename T>
+T &Array<T>::operator[](unsigned int index)
+{
+	if (index >= this->_len)
+	{
+		throw (OutOfRangeException());
+	}
+	return (this->_array[index]);
+}
+
+template <typename T>
+const T & Array<T>::operator[](unsigned int index) const
+{
+	if (index >= this->_len)
+	{
+		throw (OutOfRangeException());
+	}
+	return (this->_array[index]);
+}
+
+
+template <typename T>
 Array<T> & Array<T>::operator=(Array<T> const &rhs)
 {
 	std::cout << "Copy operator called" << std::endl;
 	if (this != &rhs)
 	{
-		if (this->_array)
-			delete [] this->_array;
-		this->_array = new T[rhs.getLen()];
-		for (int i = 0; i < rhs.getLen(); i++)
+		this->_len = rhs.size();
+		this->_array = new T[rhs.size()];
+		for (unsigned int i = 0; i < rhs.size(); i++)
 		{
 			this->_array[i] = rhs[i];
 		}
@@ -54,16 +74,6 @@ Array<T> & Array<T>::operator=(Array<T> const &rhs)
 	return (*this);
 }
 
-template <typename T>
-T Array<T>::operator[](unsigned int index)
-{
-	if (index >= this->len)
-	{
-		throw (OutOfRangeException());
-		return (0);
-	}
-	return (this->_array[index]);
-}
 
 template <typename T>
 Array<T>::~Array(void)
@@ -73,12 +83,6 @@ Array<T>::~Array(void)
 		delete [] this->_array;
 	return ;
 }
-
-// template <typename T>
-// unsigned int Array<T>::getLen(void) const
-// {
-// 	return (this->_len);
-// }
 
 template <typename T>
 T *Array<T>::getArray(void) const

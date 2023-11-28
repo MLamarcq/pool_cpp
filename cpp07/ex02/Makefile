@@ -1,28 +1,27 @@
-NAME	= Iter
-CC		= c++
-FLAGS	= -Wall -Werror -Wextra -std=c++98
-SRC		= main.cpp array.cpp
-OBJ		= $(SRC:.cpp=.o)
-DEP		= $(SRC:.cpp=.d)
-RM		= rm -f
+NAME		= Array
+CC			= c++
+FLAGS		= -Wall -Werror -Wextra -std=c++98
+SRC			= main.cpp \
 
-all: $(NAME)
 
-$(NAME): $(OBJ)
+OBJ			= $(SRC:.cpp=.o)
+RM			= rm -f
+
+all		: $(NAME)
+
+$(NAME) : $(OBJ)
 	$(CC) $(FLAGS) -o $@ $^
 
-.cpp.o:
-	$(CC) $(FLAGS) -MMD -MP -o $@ -c $<
+.cpp.o	:
+	$(CC) $(FLAGS) -o $@ -c $<
 
--include $(DEP)
+.PHONY	: all clean fclean re
 
-.PHONY: all clean fclean re
+clean	:
+	$(RM) $(OBJ)
 
-clean:
-	$(RM) $(OBJ) $(DEP)
-
-fclean: clean
+fclean	: clean
 	$(RM) $(NAME)
 
-re: fclean all
-
+re		: fclean
+	make all

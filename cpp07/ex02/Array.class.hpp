@@ -4,6 +4,11 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <ctime>
+#include <stdio.h>
+#include <cstdlib>
+#define MAX_VAL 750
+
 
 template <typename T>
 
@@ -17,10 +22,10 @@ class Array
 				~Array<T>(void);
 
 				Array<T> &operator=(Array<T> const &rhs);
-				T operator[](unsigned int index);
+				T &operator[](unsigned int index);
+				const T& operator[](unsigned int index) const;
 
 				T* getArray(void) const;
-				//unsigned int getLen(void) const;
 				unsigned int size(void) const;
 
 
