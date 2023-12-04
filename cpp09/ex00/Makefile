@@ -1,8 +1,8 @@
-NAME		= Span
+NAME		= BitcoinExchange
 CC			= c++
 FLAGS		= -Wall -Werror -Wextra -std=c++98
 SRC			= main.cpp \
-Span.class.cpp \
+BitcoinExchange.cpp \
 
 
 OBJ			= $(SRC:.cpp=.o)

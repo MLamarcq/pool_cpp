@@ -33,6 +33,8 @@ class Span
 			int				RandomNumber(void) const;
 			void			Generate(void);
 
+			void			insertAll(void);
+
 			class SizeTooLowException : public std::exception
 			{
 				public : 

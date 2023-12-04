@@ -14,6 +14,7 @@ void found(T &type, int finder)
 		throw(NotFindException());
 	return ;
 }
+
 template<typename T>
 void	fillContainer(T &type, int ref)
 {
@@ -23,7 +24,7 @@ void	fillContainer(T &type, int ref)
 		if (ref < 0 || ref > 2147483647)
 		{
 			std::cout << "Wrong arguement. Please insert a number in int range" << std::endl;
-		return ;
+			return ;
 		}
 		for (int i = 0; i < ref; i++)
 		{

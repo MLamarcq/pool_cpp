@@ -4,7 +4,7 @@ int main()
 {
 	std::list<int> lst;
 
-	std::cout << "Easyfind with list" << std::endl;
+	std::cout << "Easyfind with list" << std::endl << std::endl;
 	std::cout << "First try with empty list : ";
 	easyfind(lst, 4);
 	fillContainer(lst, 10);
@@ -24,7 +24,7 @@ int main()
 
 
 	std::vector<int> vect;
-	std::cout << "Easyfind with vector" << std::endl;
+	std::cout << "Easyfind with vector" << std::endl << std::endl;
 	
 	std::cout << "First try with empty vector : ";
 	easyfind(vect, 8);

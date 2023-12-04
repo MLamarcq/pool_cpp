@@ -25,7 +25,6 @@ int main()
 		std::cout << e.what() << std::endl;
 		return (0);
 	}
-	return (0);
 
 	/************************************************************/
 
@@ -49,6 +48,12 @@ int main()
 	// {
 	// 	std::cout << e.what() << std::endl;
 	// 	return (0);
+	// }
+	// sp.Generate();
+	// sp.insertAll();
+	// for (std::vector<int>::const_iterator it = sp.getBegin(); it != sp.getEnd(); it++)
+	// {
+	// 	std::cout << *it << std::endl;
 	// }
 
 	/************************************************************/
@@ -74,13 +79,18 @@ int main()
 	// 	std::cout << e.what() << std::endl;
 	// 	return (0);
 	// }
+	// sp.Generate();
+	// sp.insertAll();
+	// for (std::vector<int>::const_iterator it = sp.getBegin(); it != sp.getEnd(); it++)
+	// {
+	// 	std::cout << *it << std::endl;
+	// }
 
 	/************************************************************/
 	
 	// std::srand(unsigned (std::time(0)));
 	// Span sp(10000);
 
-	// sp.Generate();
 	// sp.Generate();
 	// std::cout << std::endl;
 	// try
@@ -98,5 +108,12 @@ int main()
 	// 	std::cout << e.what() << std::endl;
 	// 	return (0);
 	// }
-	// return (0);
+	// // sp.Generate();
+	// // sp.Generate();
+	// sp.insertAll();
+	// for (std::vector<int>::const_iterator it = sp.getBegin(); it != sp.getEnd(); it++)
+	// {
+	// 	std::cout << *it << std::endl;
+	// }
+	return (0);
 }

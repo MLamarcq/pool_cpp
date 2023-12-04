@@ -20,19 +20,19 @@ class MutantStack : public std::stack<T>
 
 			MutantStack<T> &operator=(MutantStack<T> const &rhs);
 
-			typedef typename std::stack<T>::container_type::iterator it;
-			typedef typename std::stack<T>::container_type::const_iterator const_it;
-			typedef typename std::stack<T>::container_type::reverse_iterator reverse_it;
-			typedef typename std::stack<T>::container_type::const_reverse_iterator const_reverse_it;
+			typedef typename std::stack<T>::container_type::iterator iterator;
+			typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+			typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
+			typedef typename std::stack<T>::container_type::const_reverse_iterator const_reverse_iterator;
 
-			it						begin(void);
-			it						end(void);
-			const_it				cbegin(void) const;
-			const_it				cend(void) const;
-			reverse_it				rbegin(void);
-			reverse_it				rend(void);
-			const_reverse_iterator	crbegin(void) const;
-			const_reverse_iterator	crend(void) const;
+			iterator						begin(void);
+			iterator						end(void);
+			const_iterator					cbegin(void) const;
+			const_iterator					cend(void) const;
+			reverse_iterator				rbegin(void);
+			reverse_iterator				rend(void);
+			const_reverse_iterator			crbegin(void) const;
+			const_reverse_iterator			crend(void) const;
 };
 
 #include "MutantStack.class.tpp"

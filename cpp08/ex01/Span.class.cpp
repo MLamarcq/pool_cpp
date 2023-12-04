@@ -75,7 +75,6 @@ const char *Span::EmptyArrayException::what() const throw()
 
 void	Span::addNumber(int number)
 {
-	//std::cout << "count = " << this->_count << std::endl;
 	if (this->_size == 0)
 	{
 		throw(SizeTooLowException());
@@ -182,11 +181,10 @@ void	Span::Generate(void)
 		}
 		catch (ArrayIsFullException &e)
 		{
-			std::cout << e.what() << " This is the " << this->_count << "'s try" << std::endl;
+			std::cout << e.what() << std::endl;
 			return ;
 		}
 	}
-
 	this->_count++;
 	std::sort(this->_array.begin(), this->_array.end());
 	std::vector<int>::const_iterator it = this->_array.begin();
@@ -196,6 +194,14 @@ void	Span::Generate(void)
 		std::cout << *it << std::endl;
 		it++;
 	}
+	return ;
+}
+
+void	Span::insertAll(void)
+{
+	if (!(this->_array.empty()))
+		this->_array.erase(this->_array.begin(), this->_array.end());
+	this->_array.insert(this->_array.begin(), this->_size, RandomNumber());
 	return ;
 }
 
