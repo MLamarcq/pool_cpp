@@ -12,7 +12,10 @@ int main(int argc, char **argv)
 		std::string str(argv[1]);
 		Bitcoin bitcoin;
 		bitcoin.open_and_save_input(str);
-		bitcoin.parse_tab_date();
+		// bitcoin.parse_tab_date();
+		// bitcoin.parse_pipe_tab();
+		// bitcoin.check_number();
+		bitcoin.do_program();
 	}
 	catch (Bitcoin::ErrorOpeningFileException &e)
 	{
@@ -28,6 +31,9 @@ int main(int argc, char **argv)
 	{
 		std::cout << e.what() << std::endl;
 		return (0);
+	}
+	catch (std::out_of_range &e)
+	{
 	}
 	return (0);
 }
