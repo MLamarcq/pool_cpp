@@ -232,10 +232,14 @@ void	Bitcoin::do_operation(std::string tab)
 			return ;
 		else
 			it--;
-		std::string str = tab.substr(token + 2);
-		double number = std::strtod(str.c_str(), NULL);
-		double result = number * it->second;
-		std::cout << temp << " = > " << number << " = " << result << std::endl;
+		token = tab.find('|');
+		if (token != std::string::npos)
+		{
+			std::string str = tab.substr(token + 2);
+			double number = std::strtod(str.c_str(), NULL);
+			double result = number * it->second;
+			std::cout << temp << " = > " << number << " = " << result << std::endl;
+		}
 	}
 	return ;
 }
@@ -292,60 +296,3 @@ const char *Bitcoin::WrongDateFormatException::what() const throw()
 {
 	return ("Error : Wrong date format");
 }
-
-
-
-
-// #include <iostream>
-// #include <map>
-// #include <string>
-
-// // ... (Initialisation de votre std::map)
-
-// // Supposons que vous avez votre std::map rempli ici
-
-// // Fonction pour obtenir la date la plus proche inférieure
-// std::string getClosestDate(const std::map<std::string, double>& myMap, const std::string& searchDate) {
-//     std::map<std::string, double>::const_iterator it = myMap.lower_bound(searchDate);
-//     if (it == myMap.begin() || it == myMap.end()) {
-//         // Si la date est inférieure à toutes les entrées ou si le std::map est vide
-//         return ""; // Aucune date trouvée
-//     } else {
-//         --it; // Pour obtenir la date la plus proche inférieure
-//         return it->first;
-//     }
-// }
-
-// // Fonction pour effectuer le calcul si la date correspond
-// void calculateIfDateExists(const std::map<std::string, double>& myMap, const std::string& searchDate) {
-//     std::map<std::string, double>::const_iterator it = myMap.find(searchDate);
-//     if (it != myMap.end()) {
-//         // Date trouvée, effectuer le calcul
-//         double value = it->second;
-//         // Faites votre calcul ici avec la valeur trouvée
-//         std::cout << "Date trouvée : " << searchDate << " => " << value << std::endl;
-//     } else {
-//         // Date non trouvée, recherche de la date la plus proche inférieure
-//         std::string closestDate = getClosestDate(myMap, searchDate);
-//         if (!closestDate.empty()) {
-//             // Date la plus proche inférieure trouvée
-//             std::cout << "Date la plus proche inférieure : " << closestDate << std::endl;
-//             // Faites ce que vous devez avec la date la plus proche inférieure
-//         } else {
-//             // Aucune date trouvée
-//             std::cout << "Aucune date trouvée." << std::endl;
-//         }
-//     }
-// }
-
-// // Utilisation :
-// int main() {
-//     // ... (Lecture de votre fichier)
-
-//     std::string searchDate = "2021-05-25"; // Date à rechercher
-
-//     // Exemple d'utilisation avec votre std::map
-//     calculateIfDateExists(yourMap, searchDate);
-
-//     return 0;
-// }
