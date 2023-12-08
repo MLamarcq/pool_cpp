@@ -37,5 +37,6 @@ int main(int argc, char **argv)
 	}
 	// std::cout << "SUCCESS !" << std::endl;
 	PmergeMe one(argc, argv);
+	one.do_vector();
 	return (0);
 }

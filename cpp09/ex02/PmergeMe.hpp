@@ -25,6 +25,10 @@ class PmergeMe
 			std::vector<int>	getVector(void) const;
 			std::deque<int>		getDeque(void) const;
 
+			void	sorting_algorithm_vector(std::vector<int> &vect, int index1, int index2);
+			void	do_vector(void);
+			void	merge(std::vector<int> &vect, int index1, int half, int index2);
+
 	private :
 
 			PmergeMe(void);
