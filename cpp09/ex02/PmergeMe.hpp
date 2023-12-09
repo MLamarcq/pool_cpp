@@ -35,6 +35,10 @@ class PmergeMe
 			void	merge(std::vector<int> &vect, int index1, int half, int index2);
 			void	avoid_duplicate_vec(void);
 
+			void	sorting_algorithm_deque(std::deque<int> &deq, int index1, int index2);
+			void	do_deque(void);
+			void	merge_deque(std::deque<int> &deq, int index1, int half, int index2);
+			void	avoid_duplicate_deque(void);
 
 
 	private :

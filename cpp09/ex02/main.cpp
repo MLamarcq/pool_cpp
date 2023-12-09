@@ -35,12 +35,20 @@ int main(int argc, char **argv)
 		std::cout << "Wrong number of arguement. We need minimum 2 numbers to execute the sorting algorithm" << std::endl;
 		return (0);
 	}
-	// std::cout << "SUCCESS !" << std::endl;
-	PmergeMe one(argc, argv);
+	PmergeMe merge(argc, argv);
+	
 	clock_t v1;
 	v1 = clock();
-	one.do_vector();
+	merge.do_vector();
 	v1 = clock() - v1;
-	std::cout << "The vector used " << std::fixed << std::setprecision(6) << static_cast<float>(v1)/CLOCKS_PER_SEC << " seconds to sort a pool of " << one.getSize_vect() << " numbers" << std::endl;
+	std::cout << "The vector used " << std::fixed << std::setprecision(6) << static_cast<float>(v1)/CLOCKS_PER_SEC << " seconds to sort a pool of " << merge.getSize_vect() << " numbers" << std::endl;
+	
+	std::cout << std::endl << std::endl;
+	clock_t v2;
+	v2 = clock();
+	merge.do_deque();
+	v2 = clock() - v2;
+	std::cout << "The deque used " << std::fixed << std::setprecision(6) << static_cast<float>(v2)/CLOCKS_PER_SEC << " seconds to sort a pool of " << merge.getSize_deque() << " numbers" << std::endl;
+
 	return (0);
 }
