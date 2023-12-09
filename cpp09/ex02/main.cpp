@@ -37,6 +37,10 @@ int main(int argc, char **argv)
 	}
 	// std::cout << "SUCCESS !" << std::endl;
 	PmergeMe one(argc, argv);
+	clock_t v1;
+	v1 = clock();
 	one.do_vector();
+	v1 = clock() - v1;
+	std::cout << "The vector used " << std::fixed << std::setprecision(6) << static_cast<float>(v1)/CLOCKS_PER_SEC << " seconds to sort a pool of " << one.getSize_vect() << " numbers" << std::endl;
 	return (0);
 }

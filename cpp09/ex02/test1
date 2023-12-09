@@ -1,0 +1,5 @@
+Before : 141 79 526 321 5 77 9 47 51 23 59 78 45645 115 206 4 56 78 91116 41848 64 55 4184 354 867 4 54 684 47 8 21 4 8 5 4 8 54 8 3 8547 5 4 8 98 8 
+We use in a first time the vector container
+The vector detected duplicate value and erased it
+After : 3 4 5 8 9 21 23 47 51 54 55 56 59 64 77 78 79 98 115 141 206 321 354 526 684 867 4184 8547 41848 45645 91116 
+The vector used 0.000031 seconds to sort a pool of 31 numbers

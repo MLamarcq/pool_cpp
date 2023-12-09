@@ -10,6 +10,9 @@
 #include <cctype>
 #include <deque>
 #include <climits>
+#include <ctime>
+#include <ios>
+#include <iomanip>
 // #define INT_MAX 2147483648
 
 class PmergeMe
@@ -24,10 +27,15 @@ class PmergeMe
 
 			std::vector<int>	getVector(void) const;
 			std::deque<int>		getDeque(void) const;
+			size_t				getSize_vect(void) const;
+			size_t				getSize_deque(void) const;
 
 			void	sorting_algorithm_vector(std::vector<int> &vect, int index1, int index2);
 			void	do_vector(void);
 			void	merge(std::vector<int> &vect, int index1, int half, int index2);
+			void	avoid_duplicate_vec(void);
+
+
 
 	private :
 
