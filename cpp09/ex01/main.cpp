@@ -28,11 +28,9 @@ int	check_numbers(char *argv)
 	{
 		if (argv[i] >= '0' && argv[i] <= '9')
 		{
-			// while (argv[i] >= '0' && argv[i] <= '9')
-			// 	i++;
 			if (argv[i + 1] != ' ' && argv[i + 1] != '\0')
 			{
-				std::cout << "Wrong argument format" << std::endl;
+				std::cout << "Error : Wrong argument format" << std::endl;
 				return (0);
 			}
 			i++;
@@ -44,7 +42,7 @@ int	check_numbers(char *argv)
 			{
 				if (argv[i + 1] != ' ' && argv[i + 1] != '\0')
 				{
-					std::cout << "Wrong argument format" << std::endl;
+					std::cout << "Error : Wrong argument format" << std::endl;
 					return (0);
 				}
 				sign++;
@@ -54,33 +52,27 @@ int	check_numbers(char *argv)
 	}
 	if (count >= sign + 2)
 	{
-		std::cout << "Wrong argument format" << std::endl;
-		std::cout << "count = " << count << "\tsign + 2 = " << sign + 2 << std::endl;
-		return (0);
-	}
-	if (count > 10)
-	{
-		std::cout << "Too much numbers in argument, max 10 allowed" << std::endl;
+		std::cout << "Error : Wrong argument format" << std::endl;
 		return (0);
 	}
 	if (count == 0)
 	{
-		std::cout << "You need numbers in argument" << std::endl;
+		std::cout << "Error : You need numbers in argument" << std::endl;
 		return (0);
 	}
 	if (sign >= count)
 	{
-		std::cout << "Too much sign in argument. Numbers of sign must be less than numbers" << std::endl;
+		std::cout << "Error : Too much sign in argument. Numbers of sign must be less than numbers" << std::endl;
 		return (0);
 	}
 	if (sign == 0)
 	{
-		std::cout << "You need sign in you argument" << std::endl;
+		std::cout << "Error : You need sign in you argument" << std::endl;
 		return (0);
 	}
 	if (count - sign > 1)
 	{
-		std::cout << "Too few sign in your operation. Number of sign has to be one less than numbers" << std::endl;
+		std::cout << "Error : Too few sign in your operation. Number of sign has to be one less than numbers" << std::endl;
 		return (0);
 	}
 	return (1);
@@ -101,8 +93,8 @@ int main(int argc, char **argv)
 	if (parsing(argv[1]) == 0)
 		return (0);
 	std::string base(argv[1]);
-	RPN one(base);
-	one.do_polish_notation();
+	RPN rpn(base);
+	rpn.do_polish_notation();
 	(void)argc;
 	return (0);
 }

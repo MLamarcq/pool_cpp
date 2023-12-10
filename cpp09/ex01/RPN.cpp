@@ -13,7 +13,6 @@ RPN::RPN(const std::string &base)
 		return ;
 	}
 	this->_base = base;
-	std::cout << "base = " << this->_base << std::endl;
 	return ;
 }
 
@@ -64,7 +63,6 @@ void	RPN::do_polish_notation(void)
 			this->_stack.pop();
 			first_nb = this->_stack.top();
 			this->_stack.pop();
-			std::cout << second_nb << "\t" << first_nb << std::endl;
 			switch (*it)
 			{
 				case '+' :
@@ -91,7 +89,7 @@ void	RPN::do_polish_notation(void)
 			this->_stack.push(res);
 		}
 	}
-	std::cout << " res = " << res << std::endl;
+	std::cout << res << std::endl;
 	return ;
 }
 
